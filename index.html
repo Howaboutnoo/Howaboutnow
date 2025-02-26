@@ -3,38 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schimbă Constituția - Inspirat de Cristian Sima</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Schimba Constitutia - Inspirat de Cristian Sima</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS -->
 </head>
 <body>
-    <header>
-        <h1>Schimbă Constituția</h1>
-        <nav>
-            <ul>
-                <li><a href="#despre">Despre</a></li>
-                <li><a href="#propuneri">Propuneri</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="despre">
-            <h2>Despre Inițiativă</h2>
-            <p>Acest site este dedicat schimbării Constituției, inspirată de ideile lui Cristian Sima.</p>
-        </section>
-        <section id="propuneri">
-            <h2>Propunerile Noastre</h2>
-            <ul id="lista-propuneri"></ul>
-            <input type="text" id="propunere-input" placeholder="Adaugă o propunere">
-            <button onclick="adaugaPropunere()">Adaugă</button>
-        </section>
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Pentru întrebări sau sugestii, ne puteți contacta la <a href="mailto:contact@schimbaconstitutia.ro">contact@schimbaconstitutia.ro</a></p>
-        </section>
-    </main>
-    <footer>
-        &copy; 2025 Schimbă Constituția - Toate drepturile rezervate.
+
+<header>
+    <h1>Schimba Constitutia - Inspirat de Cristian Sima</h1>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#video">Video</a>
+    <a href="#register">Inregistrare</a>
+    <a href="#book">Carte</a>
+</nav>
+
+<div class="content" id="home">
+    <h2>Bine ai venit pe site-ul nostru!</h2>
+    <p>Site-ul nostru este dedicat schimbării constituției inspirat de Cristian Sima. Explorează diferite secțiuni ale site-ului și află mai multe despre proiectul nostru!</p>
+</div>
+
+<div class="content" id="video">
+    <h2>Vizionați acest videoclip pe YouTube</h2>
+    <div class="https://www.youtube.com/shorts/AcHKTJU9Pfo">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</div>
+
+<div class="content" id="register">
+    <h2>Înregistrează-te pentru a participa la proiect</h2>
+    <div class="register-form">
+        <form id="registrationForm" onsubmit="return validateForm()">
+            <label for="name">Nume:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Parola:</label>
+            <input type="password" id="password" name="password" required>
+
+            <input type="submit" value="Înregistrează-te">
+        </form>
+        <div id="formFeedback" class="form-feedback"></div>
+    </div>
+</div>
+
+<div class="content" id="book">
+    <h2>Cumpără cartea noastră</h2>
+    <div class="book-section">
+        <img src="https://via.placeholder.com/500x700" alt="Carte Schimba Constitutia">
+        <p><strong>Schimba Constitutia - Cristian Sima</strong></p>
+        <p>Vrei să afli mai multe despre schimbările propuse? Achiziționează cartea noastră și descoperă viziunea completă!</p>
+        <button onclick="buyBook()">Cumpără acum</button>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 Schimba Constitutia. Toate drepturile rezervate.</p>
+</footer>
+
+<script src="script.js"></script> <!-- Link to external JS -->
+</body>
+</html>
+
     </footer>
     <script src="script.js"></script>
 </body>
