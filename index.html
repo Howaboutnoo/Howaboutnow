@@ -7,13 +7,31 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>Schimbă Constituția - Inspirat de Cristian Sima</header>
+    <header>
+        <h1>Schimbă Constituția</h1>
+        <nav>
+            <ul>
+                <li><a href="#despre">Despre</a></li>
+                <li><a href="#propuneri">Propuneri</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
     <main>
-        <div class="container">
-            <h1>Bine ai venit!</h1>
-            <p>Acest site este dedicat inițiativei de schimbare a Constituției, inspirată de ideile lui Cristian Sima.</p>
-            <p>Scopul nostru este de a propune și dezbate modificări constituționale pentru un viitor mai bun.</p>
-        </div>
+        <section id="despre">
+            <h2>Despre Inițiativă</h2>
+            <p>Acest site este dedicat schimbării Constituției, inspirată de ideile lui Cristian Sima.</p>
+        </section>
+        <section id="propuneri">
+            <h2>Propunerile Noastre</h2>
+            <ul id="lista-propuneri"></ul>
+            <input type="text" id="propunere-input" placeholder="Adaugă o propunere">
+            <button onclick="adaugaPropunere()">Adaugă</button>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Pentru întrebări sau sugestii, ne puteți contacta la <a href="mailto:contact@schimbaconstitutia.ro">contact@schimbaconstitutia.ro</a></p>
+        </section>
     </main>
     <footer>
         &copy; 2025 Schimbă Constituția - Toate drepturile rezervate.
