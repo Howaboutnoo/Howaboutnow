@@ -3,73 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schimba Constitutia - Inspirat de Cristian Sima</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS -->
+    <title>Ce facem cu pisica? - Știri și Curiozități</title>
+    <meta name="description" content="Cele mai noi știri, articole și curiozități despre viața de zi cu zi, tehnologie, sănătate, politică și multe altele.">
+    <meta name="keywords" content="știri, curiozități, noutăți, articole, informații utile, politică">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<header>
-    <h1>Schimba Constitutia - Inspirat de Cristian Sima</h1>
-</header>
-
-<nav>
-    <a href="#home">Home</a>
-    <a href="#video">Video</a>
-    <a href="#register">Inregistrare</a>
-    <a href="#book">Carte</a>
-</nav>
-
-<div class="content" id="home">
-    <h2>Bine ai venit pe site-ul nostru!</h2>
-    <p>Site-ul nostru este dedicat schimbării constituției inspirat de Cristian Sima. Explorează diferite secțiuni ale site-ului și află mai multe despre proiectul nostru!</p>
-</div>
-
-<div class="content" id="video">
-    <h2>Vizionați acest videoclip pe YouTube Shorts</h2>
-    <div class="youtube-video">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/AcHKTJU9Pfo" title="YouTube Shorts video" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-</div>
-
-
-<div class="content" id="register">
-    <h2>Înregistrează-te pentru a participa la proiect</h2>
-    <div class="register-form">
-        <form id="registrationForm" onsubmit="return validateForm()">
-            <label for="name">Nume:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="password">Parola:</label>
-            <input type="password" id="password" name="password" required>
-
-            <input type="submit" value="Înregistrează-te">
-        </form>
-        <div id="formFeedback" class="form-feedback"></div>
-    </div>
-</div>
-
-<div class="content" id="book">
-    <h2>Cumpără cartea noastră</h2>
-    <div class="book-section">
-        <img src="https://via.placeholder.com/500x700" alt="Carte Schimba Constitutia">
-        <p><strong>Schimba Constitutia - Cristian Sima</strong></p>
-        <p>Vrei să afli mai multe despre schimbările propuse? Achiziționează cartea noastră și descoperă viziunea completă!</p>
-        <button onclick="buyBook()">Cumpără acum</button>
-    </div>
-</div>
-
-<footer>
-    <p>&copy; 2025 Schimba Constitutia. Toate drepturile rezervate.</p>
-</footer>
-
-<script src="script.js"></script> <!-- Link to external JS -->
-</body>
-</html>
-
+    <header>
+        <h1>Ce facem cu pisica?</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Acasă</a></li>
+                <li><a href="#latest">Ultimele Știri</a></li>
+                <li><a href="#categories">Categorii</a></li>
+                <li><a href="#about">Despre Noi</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home" class="banner">
+        <h2>Bine ai venit la Ce facem cu pisica?</h2>
+        <p>Descoperă cele mai noi informații și curiozități din diverse domenii.</p>
+    </section>
+    
+    <section id="latest" class="news-section">
+        <h2>Ultimele Articole</h2>
+        <div class="article">
+            <h3>Importanța somnului pentru sănătate</h3>
+            <p>Descoperă cum somnul afectează sănătatea ta și ce poți face pentru a avea un somn mai bun.</p>
+            <a href="#">Citește mai mult</a>
+        </div>
+        <div class="article">
+            <h3>Tehnologii inovatoare în 2025</h3>
+            <p>Un rezumat al celor mai așteptate inovații tehnologice ale anului.</p>
+            <a href="#">Citește mai mult</a>
+        </div>
+        <div class="article">
+            <h3>Criza politică actuală și impactul asupra economiei</h3>
+            <p>Analizăm ultimele evenimente politice și cum acestea influențează situația economică.</p>
+            <a href="#">Citește mai mult</a>
+        </div>
+    </section>
+    
+    <section id="categories" class="news-section">
+        <h2>Categorii</h2>
+        <ul>
+            <li><a href="#">Politică</a></li>
+            <li><a href="#">Tehnologie</a></li>
+            <li><a href="#">Sănătate</a></li>
+            <li><a href="#">Lifestyle</a></li>
+            <li><a href="#">Știință</a></li>
+            <li><a href="#">Curiozități</a></li>
+        </ul>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Ce facem cu pisica? - Toate drepturile rezervate.</p>
     </footer>
+    
     <script src="script.js"></script>
 </body>
 </html>
