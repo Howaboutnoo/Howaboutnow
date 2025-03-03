@@ -30,13 +30,14 @@ document.addEventListener("DOMContentLoaded", () => {
             fetch(`https://ro.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(topic)}`)
                 .then(response => response.json())
                 .then(data => {
-                    if (data.extract) {
+                    if (data.extract && data.thumbnail) {
                         const articleElement = document.createElement("div");
                         articleElement.classList.add("article");
                         articleElement.innerHTML = `
+                            <img src="${data.thumbnail.source}" alt="${data.title}" class="article-image">
                             <h3>${data.title}</h3>
-                            <p>${data.extract}</p>
-                            <a href="${data.content_urls.desktop.page}" target="_blank">Citește mai mult</a>
+                            <p>${data.extract.substring(0, 150)}...</p>
+                            <button class="read-more" onclick="window.open('${data.content_urls.desktop.page}', '_blank')">Citește mai mult</button>
                         `;
                         newsContainer.appendChild(articleElement);
                     }
