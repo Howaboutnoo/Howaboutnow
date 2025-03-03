@@ -22,24 +22,27 @@ document.addEventListener("DOMContentLoaded", () => {
     }, { threshold: 0.3 });
     sections.forEach(section => observer.observe(section));
 
-    // Încărcare dinamică a știrilor
+    // Încărcare dinamică a știrilor de pe Wikipedia
     const newsContainer = document.querySelector("#latest");
     if (newsContainer) {
-        fetch("news.json") // Simulăm un API static
-            .then(response => response.json())
-            .then(data => {
-                data.articles.forEach(article => {
-                    const articleElement = document.createElement("div");
-                    articleElement.classList.add("article");
-                    articleElement.innerHTML = `
-                        <h3>${article.title}</h3>
-                        <p>${article.summary}</p>
-                        <a href="${article.link}" target="_blank">Citește mai mult</a>
-                    `;
-                    newsContainer.appendChild(articleElement);
-                });
-            })
-            .catch(error => console.error("Eroare la încărcarea știrilor:", error));
+        const topics = ["Politică", "Tehnologie", "Știință", "Sănătate", "Economie"];
+        topics.forEach(topic => {
+            fetch(`https://ro.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(topic)}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.extract) {
+                        const articleElement = document.createElement("div");
+                        articleElement.classList.add("article");
+                        articleElement.innerHTML = `
+                            <h3>${data.title}</h3>
+                            <p>${data.extract}</p>
+                            <a href="${data.content_urls.desktop.page}" target="_blank">Citește mai mult</a>
+                        `;
+                        newsContainer.appendChild(articleElement);
+                    }
+                })
+                .catch(error => console.error("Eroare la încărcarea știrilor Wikipedia:", error));
+        });
     }
 
     // Buton pentru revenire sus
