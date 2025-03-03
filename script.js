@@ -1,35 +1,60 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const backToTop = document.getElementById("backToTop");
-    const sections = document.querySelectorAll(".content");
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("Ce facem cu pisica? - Website încărcat");
 
-    // Afișare secțiuni animate la scroll
+    // Meniu mobil interactiv
+    const menuToggle = document.createElement("button");
+    menuToggle.textContent = "☰";
+    menuToggle.classList.add("menu-toggle");
+    document.querySelector("header").prepend(menuToggle);
+    const nav = document.querySelector("nav ul");
+    menuToggle.addEventListener("click", () => {
+        nav.classList.toggle("active");
+    });
+
+    // Animatii la scroll
+    const sections = document.querySelectorAll(".banner, .news-section, .article");
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add("show");
+                entry.target.classList.add("fade-in");
             }
         });
-    }, { threshold: 0.2 });
+    }, { threshold: 0.3 });
+    sections.forEach(section => observer.observe(section));
 
-    sections.forEach(section => {
-        observer.observe(section);
-    });
+    // Încărcare dinamică a știrilor
+    const newsContainer = document.querySelector("#latest");
+    if (newsContainer) {
+        fetch("news.json") // Simulăm un API static
+            .then(response => response.json())
+            .then(data => {
+                data.articles.forEach(article => {
+                    const articleElement = document.createElement("div");
+                    articleElement.classList.add("article");
+                    articleElement.innerHTML = `
+                        <h3>${article.title}</h3>
+                        <p>${article.summary}</p>
+                        <a href="${article.link}">Citește mai mult</a>
+                    `;
+                    newsContainer.appendChild(articleElement);
+                });
+            })
+            .catch(error => console.error("Eroare la încărcarea știrilor:", error));
+    }
 
-    // Afișare buton "Înapoi sus"
-    window.addEventListener("scroll", function () {
+    // Buton pentru revenire sus
+    const backToTop = document.createElement("button");
+    backToTop.textContent = "↑";
+    backToTop.classList.add("back-to-top");
+    document.body.appendChild(backToTop);
+    window.addEventListener("scroll", () => {
         if (window.scrollY > 300) {
-            backToTop.style.display = "block";
+            backToTop.classList.add("visible");
         } else {
-            backToTop.style.display = "none";
+            backToTop.classList.remove("visible");
         }
     });
-
-    // Funcționalitate scroll sus
-    backToTop.addEventListener("click", function () {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-
-    backToTop.addEventListener("click", function () {
+    backToTop.addEventListener("click", () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
     });
 });
