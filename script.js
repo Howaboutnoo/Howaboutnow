@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     articleElement.innerHTML = `
                         <h3>${article.title}</h3>
                         <p>${article.summary}</p>
-                        <a href="${article.link}">Citește mai mult</a>
+                        <a href="${article.link}" target="_blank">Citește mai mult</a>
                     `;
                     newsContainer.appendChild(articleElement);
                 });
